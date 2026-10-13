@@ -4,9 +4,9 @@
   /* ---------- EDIT THESE ----------
      Leave a value as "" to keep it hidden or marked as a placeholder. */
   const CONFIG = {
-    email: "",      // e.g. "you@example.com"
-    linkedin: "",   // full URL, e.g. "https://www.linkedin.com/in/your-profile"
-    github: "",     // full URL, e.g. "https://github.com/your-username"
+    email: "atillanopogi@gmail.com",      // shown as a mailto link
+    linkedin: "https://www.linkedin.com/in/mark-beaver-atillano-796167443/",   // full URL
+    github: "https://github.com/AtillanoMarkBeaver",     // full URL
     location: "",   // e.g. "Batangas, Philippines"
     resume: "assets/documents/Mark_Beaver_C_Atillano_Resume.pdf"
   };
@@ -75,6 +75,12 @@
       });
     }, { rootMargin: "-40% 0px -55% 0px" });
     links.forEach((a) => { const s = $(a.hash); if (s) io.observe(s); });
+    /* The last section is short, so mark Contact active when the page bottom is reached */
+    window.addEventListener("scroll", () => {
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+        links.forEach((a) => a.setAttribute("aria-current", String(a.hash === "#contact")));
+      }
+    }, { passive: true });
   }
 
   /* Social links (only shown when a real URL is supplied) */
@@ -141,6 +147,10 @@
         const ul = make("ul");
         val.forEach((v) => { const li = make("li"); li.appendChild(textNode(v)); ul.appendChild(li); });
         body.appendChild(ul);
+      } else if (label === "Technologies used" && !val.startsWith("[")) {
+        const ul = make("ul", "tags");
+        val.split(",").forEach((t) => ul.appendChild(make("li", "", t.trim())));
+        body.appendChild(ul);
       } else {
         const para = make("p"); para.appendChild(textNode(val)); body.appendChild(para);
       }
@@ -153,10 +163,11 @@
     const fig = make("figure", "shot");
     const img = make("img");
     img.src = p.image; img.alt = p.title + " screenshot (placeholder, use sanitized or mock data only)";
-    img.width = 640; img.height = 400; img.dataset.fallback = "Project screenshot";
+    img.width = 640; img.height = 400; img.loading = "lazy"; img.decoding = "async"; img.dataset.fallback = "Project screenshot";
     fig.appendChild(img); watchImage(img);
 
     const info = make("div");
+    if (p.featured) info.appendChild(make("p", "badge", "Featured project"));
     info.appendChild(make("h3", "", p.title));
     info.appendChild(make("p", "", p.description));
     const tags = make("ul", "tags");
@@ -177,6 +188,15 @@
     list.appendChild(card);
   });
   list.appendChild(make("div", "card empty", "More projects will be added here."));
+
+  /* Subtle reveal-on-scroll (skipped for reduced-motion users; content stays visible without JS) */
+  const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!calm && "IntersectionObserver" in window) {
+    const reveal = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("in"); reveal.unobserve(en.target); } });
+    }, { threshold: 0.1, rootMargin: "0px 0px -6% 0px" });
+    document.querySelectorAll(".section .wrap > *").forEach((n) => { n.classList.add("reveal"); reveal.observe(n); });
+  }
 
   /* Dialog close: button, backdrop click */
   $(".dlg-close").addEventListener("click", () => dialog.close());

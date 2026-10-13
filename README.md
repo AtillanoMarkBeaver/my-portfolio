@@ -10,7 +10,7 @@ portfolio/
 ├── css/style.css
 ├── js/script.js
 ├── assets/
-│   ├── images/ (profile-placeholder.svg, lto-payroll-project.svg)
+│   ├── images/ (profile.jpg, lto-payroll-project.svg)
 │   └── documents/ (put the resume PDF here)
 └── README.md
 ```
@@ -28,12 +28,13 @@ Then visit http://localhost:8000. (Opening `index.html` by double-click also wor
 ## Customize
 
 1. **Contact and links:** edit the `CONFIG` block at the top of `js/script.js` (email, LinkedIn, GitHub, location). Empty values stay hidden or show as placeholders. Nothing is invented.
-2. **Profile photo:** add your photo as `assets/images/profile.jpg`, then change the `src` of the `<img>` in the hero section of `index.html` to `assets/images/profile.jpg`.
+2. **Profile photo:** your photo is `assets/images/profile.jpg` (4:5 portrait, about 640x800). To change it, replace that file with a new image of the same name and shape.
 3. **Resume:** save your PDF as `assets/documents/Mark_Beaver_C_Atillano_Resume.pdf`. The Download Resume button appears automatically once the file exists.
 4. **Project details:** edit the `details` fields of the LTO Payroll project in `js/script.js`. Yellow `[bracketed]` text is a placeholder to replace with facts you can verify.
 5. **Screenshots:** replace `assets/images/lto-payroll-project.svg` (or change the `image` path) with a **sanitized screenshot or mock data only**. Never publish employee names, salaries, bank details, payslips, payroll records, credentials, internal URLs, or confidential screens.
-6. **OJT dates and duties, skills:** edit the Experience and Skills sections in `index.html`. Delete "Git and GitHub" if you cannot demonstrate it.
-7. **More projects:** copy the project object in `PROJECTS` in `js/script.js` and edit it.
+6. **OJT dates and duties, skills:** edit the Experience and Skills sections in `index.html`. Only list skills you can demonstrate. "Git and GitHub" was removed until you confirm it; the Skills list has a comment showing where to add it back.
+7. **SEO URLs:** if you rename the repository, update the `canonical`, `og:url`, and JSON-LD URLs in the `<head>` of `index.html`.
+8. **More projects:** copy the project object in `PROJECTS` in `js/script.js` and edit it.
 
 ## Deploy to GitHub Pages
 

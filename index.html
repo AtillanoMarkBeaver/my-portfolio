@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mark Beaver C. Atillano | Computer Engineering Student</title>
   <meta name="description" content="Portfolio of Mark Beaver C. Atillano, a Computer Engineering student and aspiring software developer.">
+  <meta name="theme-color" content="#0a1020">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://atillanomarkbeaver.github.io/my-portfolio/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mark Beaver C. Atillano | Computer Engineering Student">
+  <meta property="og:description" content="Portfolio of Mark Beaver C. Atillano, a Computer Engineering student and aspiring software developer.">
+  <meta property="og:url" content="https://atillanomarkbeaver.github.io/my-portfolio/">
+  <meta property="og:image" content="https://atillanomarkbeaver.github.io/my-portfolio/assets/images/profile.jpg">
+  <meta name="twitter:card" content="summary">
+  <!-- Keep these URLs in sync with CONFIG in js/script.js and with your repository name. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Mark Beaver C. Atillano","jobTitle":"Computer Engineering Student","url":"https://atillanomarkbeaver.github.io/my-portfolio/","sameAs":["https://www.linkedin.com/in/mark-beaver-atillano-796167443/","https://github.com/AtillanoMarkBeaver"]}</script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231d4ed8'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='sans-serif' font-size='28' font-weight='700' fill='white'%3EMB%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -38,27 +51,32 @@
             <a class="btn btn-secondary" id="resume-btn" href="assets/documents/Mark_Beaver_C_Atillano_Resume.pdf" download hidden>Download Resume</a>
           </div>
           <ul class="social" id="hero-links"></ul>
+          <dl class="hero-facts">
+            <div><dt>Studying</dt><dd>BS Computer Engineering, University of Batangas (4th year)</dd></div>
+            <div><dt>OJT</dt><dd>320 hours at LTO Regional Office IV-A</dd></div>
+            <div><dt>Featured project</dt><dd>LTO Payroll Management System</dd></div>
+          </dl>
         </div>
         <figure class="photo">
-          <img src="assets/images/profile-placeholder.svg" width="320" height="400" alt="Profile photo of Mark Beaver C. Atillano (placeholder, replace with your own photo)" data-fallback="Profile photo">
+          <img src="assets/images/profile.jpg" width="320" height="400" decoding="async" fetchpriority="high" alt="Portrait of Mark Beaver C. Atillano" data-fallback="Profile photo">
         </figure>
       </div>
     </section>
 
-    <section id="about" class="section">
+    <section id="about" class="section" aria-labelledby="about-title">
       <div class="wrap">
-        <h2>About me</h2>
+        <h2 id="about-title">About me</h2>
         <div class="prose">
           <p>I am a Computer Engineering student at the University of Batangas with a growing interest in software development and information technology.</p>
-          <p>I have hands-on experience building a payroll management system with PHP, MySQL, and XAMPP, and I completed On-the-Job Training at LTO Regional Office IV-A.</p>
+          <p>I have hands-on experience building a payroll management system with PHP, MySQL, and XAMPP, and my 320-hour On-the-Job Training is with LTO Regional Office IV-A.</p>
           <p>As an entry-level applicant, I am looking to keep improving my technical skills and contribute to a professional development team.</p>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="section alt">
+    <section id="skills" class="section alt" aria-labelledby="skills-title">
       <div class="wrap">
-        <h2>Technical skills</h2>
+        <h2 id="skills-title">Technical skills</h2>
         <div class="skill-groups">
           <div>
             <h3>Programming and web development</h3>
@@ -70,24 +88,23 @@
             <h3>Database and tools</h3>
             <ul class="tags">
               <li>MySQL</li><li>XAMPP</li>
-              <!-- Verify before publishing: delete this item if you cannot demonstrate Git and GitHub. -->
-              <li>Git and GitHub</li>
+              <!-- Not verified yet: add other tools (for example Git and GitHub) here only after you confirm you can demonstrate them. -->
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="section">
+    <section id="projects" class="section" aria-labelledby="projects-title">
       <div class="wrap">
-        <h2>Projects</h2>
+        <h2 id="projects-title">Projects</h2>
         <div id="project-list" class="project-list"></div>
       </div>
     </section>
 
-    <section id="experience" class="section alt">
+    <section id="experience" class="section alt" aria-labelledby="experience-title">
       <div class="wrap">
-        <h2>Experience</h2>
+        <h2 id="experience-title">Experience</h2>
         <article class="entry">
           <h3>On-the-Job Training, LTO Regional Office IV-A</h3>
           <dl class="facts">
@@ -104,9 +121,9 @@
       </div>
     </section>
 
-    <section id="education" class="section">
+    <section id="education" class="section" aria-labelledby="education-title">
       <div class="wrap">
-        <h2>Education</h2>
+        <h2 id="education-title">Education</h2>
         <article class="entry">
           <h3>University of Batangas</h3>
           <dl class="facts">
@@ -117,9 +134,9 @@
       </div>
     </section>
 
-    <section id="contact" class="section alt">
+    <section id="contact" class="section alt" aria-labelledby="contact-title">
       <div class="wrap">
-        <h2>Contact</h2>
+        <h2 id="contact-title">Contact</h2>
         <p class="prose">I am open to entry-level software developer and IT opportunities.</p>
         <ul class="contact-list" id="contact-list"></ul>
       </div>
