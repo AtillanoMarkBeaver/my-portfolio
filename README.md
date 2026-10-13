@@ -32,7 +32,7 @@ Then visit http://localhost:8000. (Opening `index.html` by double-click also wor
 3. **Resume:** save your PDF as `assets/documents/Mark_Beaver_C_Atillano_Resume.pdf`. The Download Resume button appears automatically once the file exists.
 4. **Project details:** edit the `details` fields of the LTO Payroll project in `js/script.js`. Yellow `[bracketed]` text is a placeholder to replace with facts you can verify.
 5. **Screenshots:** replace `assets/images/lto-payroll-project.svg` (or change the `image` path) with a **sanitized screenshot or mock data only**. Never publish employee names, salaries, bank details, payslips, payroll records, credentials, internal URLs, or confidential screens.
-6. **OJT dates and duties, skills:** edit the Experience and Skills sections in `index.html`. Delete "Git and GitHub" if you cannot demonstrate it.
+6. **OJT dates and duties, skills:** edit the Experience and Skills sections in `index.html`. Only list skills you can demonstrate. "Git and GitHub" was removed until you confirm it; the Skills list has a comment showing where to add it back.
 7. **More projects:** copy the project object in `PROJECTS` in `js/script.js` and edit it.
 
 ## Deploy to GitHub Pages
