@@ -75,12 +75,6 @@
       });
     }, { rootMargin: "-40% 0px -55% 0px" });
     links.forEach((a) => { const s = $(a.hash); if (s) io.observe(s); });
-    /* The last section is short, so mark Contact active when the page bottom is reached */
-    window.addEventListener("scroll", () => {
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
-        links.forEach((a) => a.setAttribute("aria-current", String(a.hash === "#contact")));
-      }
-    }, { passive: true });
   }
 
   /* Social links (only shown when a real URL is supplied) */
@@ -147,10 +141,6 @@
         const ul = make("ul");
         val.forEach((v) => { const li = make("li"); li.appendChild(textNode(v)); ul.appendChild(li); });
         body.appendChild(ul);
-      } else if (label === "Technologies used" && !val.startsWith("[")) {
-        const ul = make("ul", "tags");
-        val.split(",").forEach((t) => ul.appendChild(make("li", "", t.trim())));
-        body.appendChild(ul);
       } else {
         const para = make("p"); para.appendChild(textNode(val)); body.appendChild(para);
       }
@@ -167,7 +157,6 @@
     fig.appendChild(img); watchImage(img);
 
     const info = make("div");
-    if (p.featured) info.appendChild(make("p", "badge", "Featured project"));
     info.appendChild(make("h3", "", p.title));
     info.appendChild(make("p", "", p.description));
     const tags = make("ul", "tags");
